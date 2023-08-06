@@ -1,0 +1,29 @@
+// COLORS
+$deep: #433869;
+$psik: #a735ff;
+$highbs: #ffcd5c;
+// Bootstrap-based
+$light: #f8f9fa;
+// Bootstrap-based
+$dark: #212529;
+
+$theme-colors: (
+  primary: $psik,
+  deep: $deep,
+  psik: $psik,
+  highbs: $highbs,
+  light: $light,
+  dark: $dark,
+);
+
+// LINKS
+$link-color: $highbs;
+
+// NAVBAR
+//  (LINKS)
+$navbar-light-brand-color: $highbs;
+$navbar-light-brand-hover-color: $highbs;
+
+// FONTS
+$font-lemon: "Lemon-Regular";
+$font-open: "OpenSans-Regular";

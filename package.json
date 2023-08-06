@@ -16,6 +16,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.10",
+    "bootstrap": "^5.3.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-sass": "^6.11.0",
@@ -25,7 +27,8 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.64.2"
+    "sass": "^1.64.2",
+    "statikon": "file:../statika"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
