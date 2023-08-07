@@ -30,9 +30,13 @@ jobs:
         uses: actions/cache@v3
         with:
           key: notion-data-cache
-          path: |
-            ./cache
-            ./static
+          path: ./cache
+
+      - name: Enable Notion files cache
+        uses: actions/cache@v3
+        with:
+          key: notion-files-cache
+          path: ./static
 
       - name: Download and cache Notion data
         run: |
@@ -51,12 +55,10 @@ jobs:
             SITE_FOLDER_PATH=.. \
             CACHE_FOLDER_NAME=products \
             ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
-          ls
 
       - name: Build website
         run: |
           npm i
-          ls
           npx gatsby build
 
       - name: FTP dev environment
