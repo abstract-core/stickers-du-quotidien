@@ -79,10 +79,6 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
           title: "Produits",
           path: "/produits",
         },
-        {
-          title: "Vidéos",
-          path: "/videos",
-        },
       ],
       mentions: true,
     },
@@ -99,7 +95,6 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
       Name: name,
       Url: url,
       ["Meta-description"]: description,
-      Robots: robots,
     } = page.properties;
 
     const stringUrl =

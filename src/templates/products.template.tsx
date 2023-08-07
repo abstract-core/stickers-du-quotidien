@@ -25,7 +25,18 @@ const ProductsTemplate = ({
             const title =
               p.page.properties["Name"].type === "title" &&
               p.page.properties["Name"].title[0].plain_text;
-            return <div>{title}</div>;
+            const imageUrl =
+              p.page.properties["Image"].type === "files" &&
+              p.page.properties["Image"].files[0]?.type === "file" &&
+              p.page.properties["Image"].files[0]?.file.url;
+            const imagePath =
+              imageUrl && `/${imageUrl.split("?")[0].split("/").pop()}`;
+            return (
+              <div>
+                {title}
+                {imagePath && <img src={imagePath} />}
+              </div>
+            );
           })}
         </>
       ),

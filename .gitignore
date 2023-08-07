@@ -4,3 +4,4 @@ routines.sh
 .cache/
 public
 src/gatsby-types.d.ts
+static
