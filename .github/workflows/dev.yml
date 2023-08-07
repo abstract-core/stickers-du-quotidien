@@ -42,13 +42,13 @@ jobs:
           node index.js \
             NOTION_TOKEN=${{ secrets.NOTION_TOKEN }} \
             DATABASE_ID=${{ secrets.PAGES_DATABASE_ID }} \
-            SITE_FOLDER_PATH=../stickers-du-quotidien \
+            SITE_FOLDER_PATH=.. \
             CACHE_FOLDER_NAME=pages \
             ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
           node index.js \
             NOTION_TOKEN=${{ secrets.NOTION_TOKEN }} \
             DATABASE_ID=${{ secrets.PRODUCTS_DATABASE_ID }} \
-            SITE_FOLDER_PATH=../stickers-du-quotidien \
+            SITE_FOLDER_PATH=.. \
             CACHE_FOLDER_NAME=products \
             ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
           ls
