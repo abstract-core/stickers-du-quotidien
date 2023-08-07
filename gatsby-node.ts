@@ -6,7 +6,7 @@ import {
 import { readFile } from "fs/promises";
 import { GatsbyNode } from "gatsby";
 import path from "path";
-import { DefaultTemplateContext } from "statikon";
+import { DefaultTemplateContext } from "nebula-atoms";
 import richTextToString from "./src/helpers/richTextToString";
 import titlePropToString from "./src/helpers/titlePropToString";
 import React from "react";

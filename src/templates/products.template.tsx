@@ -3,7 +3,10 @@ import {
   BlockObjectResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
-import { CustomizableTemplate, CustomizableTemplateContext } from "statikon";
+import {
+  CustomizableTemplate,
+  CustomizableTemplateContext,
+} from "nebula-atoms";
 import { PageProps } from "gatsby";
 
 export type ProductsTemplateContext = CustomizableTemplateContext & {
