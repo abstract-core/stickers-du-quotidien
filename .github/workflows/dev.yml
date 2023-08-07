@@ -51,10 +51,12 @@ jobs:
             SITE_FOLDER_PATH=../stickers-du-quotidien \
             CACHE_FOLDER_NAME=products \
             ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
+          ls
 
       - name: Build website
         run: |
           npm i
+          ls
           npx gatsby build
 
       - name: FTP dev environment
