@@ -58,8 +58,8 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
       title: TITLE,
       links: [
         {
-          title: "Produits",
-          path: "/produits",
+          title: "Nos stickers",
+          path: "/stickers",
         },
       ],
     },
@@ -71,8 +71,8 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
           path: "/",
         },
         {
-          title: "Produits",
-          path: "/produits",
+          title: "Nos stickers",
+          path: "/stickers",
         },
       ],
       mentions: true,
@@ -111,12 +111,12 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
     createPage({
       component: path.resolve(
         `./src/templates/${
-          stringUrl === "/produits" ? "products" : "default"
+          stringUrl === "/stickers" ? "products" : "default"
         }.template.tsx`
       ),
       path: stringUrl || page.id,
       context:
-        stringUrl === "/produits"
+        stringUrl === "/stickers"
           ? ({
               ...defaultContext,
               products,
