@@ -6,3 +6,4 @@ public
 src/gatsby-types.d.ts
 static/*
 !static/astraliko.svg
+!static/fonts
