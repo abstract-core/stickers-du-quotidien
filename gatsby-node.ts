@@ -9,11 +9,12 @@ import path from "path";
 import { DefaultTemplateContext } from "nebula-atoms";
 import richTextToString from "./src/helpers/richTextToString";
 import titlePropToString from "./src/helpers/titlePropToString";
-import React from "react";
 import { ProductsTemplateContext } from "./src/templates/products.template";
 
 export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   const { createPage } = actions;
+
+  const TITLE = "Stickers pour la maison";
 
   /*
    * 1. PAGE [& CONTENTS] RETRIEVING
@@ -51,13 +52,10 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
 
   const sharedProps: Pick<
     DefaultTemplateContext,
-    "bg" | "text" | "navbar" | "contents" | "footer"
+    "navbar" | "contents" | "footer"
   > = {
-    bg: "COLORS",
-    text: "COLORS",
     navbar: {
-      bg: "COLORS",
-      text: "COLORS",
+      title: TITLE,
       links: [
         {
           title: "Produits",
@@ -67,9 +65,6 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
     },
     contents: [],
     footer: {
-      bg: "COLORS",
-      text: "COLORS",
-      a: "COLORS",
       links: [
         {
           title: "Accueil",
@@ -88,8 +83,6 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
    * 3. PAGE [& CONTENTS] RENDERING
    */
 
-  const TITLE = "Stickers du quotidien";
-
   pages.forEach(({ page, blocks }) => {
     const {
       Name: name,
@@ -102,16 +95,17 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
       richTextToString(url.rich_text as TextRichTextItemResponse[]);
 
     const defaultContext = {
-      title: name.type === "title" && titlePropToString(name),
+      ...sharedProps,
+      pageTitle: name.type === "title" && titlePropToString(name),
       blocks,
       head: {
         title: `${name.type === "title" && titlePropToString(name)} | ${TITLE}`,
+        favicon: "astraliko.svg",
         description:
           description.type === "rich_text" &&
           richTextToString(description.rich_text as TextRichTextItemResponse[]),
         // noIndex: robots.type === "select" && robots.select?.name === "Masqué",
       },
-      ...sharedProps,
     } as DefaultTemplateContext;
 
     createPage({

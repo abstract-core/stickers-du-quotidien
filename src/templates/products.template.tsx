@@ -8,6 +8,7 @@ import {
   CustomizableTemplateContext,
 } from "nebula-atoms";
 import { PageProps } from "gatsby";
+import ProductsList from "../components/ProductsList";
 
 export type ProductsTemplateContext = CustomizableTemplateContext & {
   products: {
@@ -22,27 +23,7 @@ const ProductsTemplate = ({
   <CustomizableTemplate
     {...props}
     staticBlocks={{
-      ["liste-produits"]: (
-        <>
-          {products.map((p) => {
-            const title =
-              p.page.properties["Name"].type === "title" &&
-              p.page.properties["Name"].title[0].plain_text;
-            const imageUrl =
-              p.page.properties["Image"].type === "files" &&
-              p.page.properties["Image"].files[0]?.type === "file" &&
-              p.page.properties["Image"].files[0]?.file.url;
-            const imagePath =
-              imageUrl && `/${imageUrl.split("?")[0].split("/").pop()}`;
-            return (
-              <div>
-                {title}
-                {imagePath && <img src={imagePath} />}
-              </div>
-            );
-          })}
-        </>
-      ),
+      ["liste-produits"]: <ProductsList products={products} />,
     }}
   />
 );

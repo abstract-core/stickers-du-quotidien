@@ -5,6 +5,7 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+@import "./variables";
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../../node_modules/bootstrap/scss/variables";
@@ -26,8 +27,99 @@
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/helpers";
 @import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/badge";
+@import "../../node_modules/bootstrap/scss/buttons";
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+@font-face {
+  font-family: $font-borel;
+  src: url("../../static/fonts/Borel-Regular.ttf");
+}
+
+@font-face {
+  font-family: $font-montserrat;
+  src: url("../../static/fonts/Montserrat-Regular.ttf");
+}
+
+body {
+  font-family: $font-montserrat;
+}
+
+#main {
+  padding-top: 12rem;
+  max-width: 820px;
+  > figure > img {
+    max-width: 100%;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-borel;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.navbar,
+footer {
+  background-color: $peach;
+}
+
+.navbar-brand {
+  font-family: $font-borel;
+  margin-top: 0.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.navbar .nav-item a,
+footer,
+footer a {
+  color: $dark;
+}
+
+.navbar .nav-item a,
+footer a {
+  transition: color 0.5;
+  &:hover,
+  &:active {
+    color: $light;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-thumbnail {
+  width: 36%;
+  > img {
+    max-height: 16rem;
+    max-width: 100%;
+  }
+}
+
+.product-details {
+  width: 64%;
+}
+
+.product-category {
+  background-color: $light;
+  color: $dark;
+  font-size: 1rem;
+}
+
+.product-link {
+  font-size: 1.5rem;
+}
+
+.callout-block {
+  background-color: $peach;
+  color: $dark;
+}
