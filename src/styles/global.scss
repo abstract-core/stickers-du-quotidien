@@ -71,6 +71,10 @@ footer {
   background-color: $peach;
 }
 
+.navbar {
+  box-shadow: 0 0 10px 10px #8888;
+}
+
 .navbar-brand {
   font-family: $font-borel;
   margin-top: 0.5rem;
@@ -99,9 +103,12 @@ footer a {
 
 .product-thumbnail {
   width: 36%;
+  padding-right: 12px;
   > img {
     max-height: 16rem;
     max-width: 100%;
+    object-fit: contain;
+    object-position: top;
   }
 }
 
