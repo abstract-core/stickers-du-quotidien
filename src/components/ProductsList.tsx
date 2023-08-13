@@ -1,5 +1,7 @@
+"use client";
+
 import { PureBlocksRenderer } from "nebula-atoms";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { PageAndBlocks } from "../types/PageAndBlocks";
 import { parseProduct } from "./_helpers/parseProduct";
 
@@ -8,13 +10,46 @@ export default function ProductsList({
 }: {
   products: PageAndBlocks[];
 }) {
+  const [category, setCategory] = useState<false | string>(false);
   const _products = useMemo(
     () => products.map((product) => parseProduct(product)),
     [products]
   );
+  const categories = useMemo(() => {
+    const categories: string[] = [];
+    _products.forEach(({ category }) => {
+      if (category && !categories.includes(category)) {
+        categories.push(category);
+      }
+    });
+    return categories;
+  }, [_products]);
+  const displayedProducts = useMemo(() => {
+    if (!category) {
+      return _products;
+    }
+    return _products.filter(
+      ({ category: _category }) => _category === category
+    );
+  }, [_products, category]);
   return (
     <div id="products-list">
-      {_products.map(
+      <div className="categories-filter">
+        {categories.map((_category) => (
+          <button
+            key={_category}
+            className={`btn me-2 mb-2 btn-${
+              category === _category ? "light" : "peach"
+            }`}
+            onClick={() =>
+              setCategory(category === _category ? false : _category)
+            }
+          >
+            {_category}
+          </button>
+        ))}
+      </div>
+      {displayedProducts.map(
         ({
           title,
           imagePath,

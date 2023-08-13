@@ -1,6 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  flags: {
+    PARTIAL_HYDRATION: true,
+  },
   siteMetadata: {
     title: `Stickers pour la maison`,
     siteUrl: `https://stickers.imrok.fr`,
