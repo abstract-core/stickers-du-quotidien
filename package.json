@@ -1,6 +1,6 @@
 {
   "name": "stickers-du-quotidien",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "stickers-du-quotidien",
   "author": "Rimarok",
@@ -25,9 +25,9 @@
     "gatsby-plugin-sitemap": "^6.11.0",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
-    "nebula-atoms": "^1.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "nebula-atoms": "^1.2.2",
+    "react": "0.0.0-experimental-0fb5b61ac-20230814",
+    "react-dom": "0.0.0-experimental-0fb5b61ac-20230814",
     "sass": "^1.64.2"
   },
   "devDependencies": {
