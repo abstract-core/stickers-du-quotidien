@@ -6,6 +6,7 @@ import {
 import {
   CustomizableTemplate,
   CustomizableTemplateContext,
+  Head,
 } from "nebula-atoms";
 import { PageProps } from "gatsby";
 import ProductsList from "../components/ProductsList";
@@ -27,5 +28,7 @@ const ProductsTemplate = ({
     }}
   />
 );
+
+export { Head };
 
 export default ProductsTemplate;
