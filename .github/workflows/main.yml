@@ -48,13 +48,15 @@ jobs:
             DATABASE_ID=${{ secrets.PAGES_DATABASE_ID }} \
             SITE_FOLDER_PATH=.. \
             CACHE_FOLDER_NAME=pages \
-            ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
+            ON_OR_AFTER=${{ vars.ON_OR_AFTER }} \
+            REINIT_CACHE=${{ vars.REINIT_CACHE_PAGES }}
           node index.js \
             NOTION_TOKEN=${{ secrets.NOTION_TOKEN }} \
             DATABASE_ID=${{ secrets.PRODUCTS_DATABASE_ID }} \
             SITE_FOLDER_PATH=.. \
             CACHE_FOLDER_NAME=products \
-            ON_OR_AFTER=${{ vars.ON_OR_AFTER }}
+            ON_OR_AFTER=${{ vars.ON_OR_AFTER }} \
+            REINIT_CACHE=${{ vars.REINIT_CACHE_PRODUCTS }}
 
       - name: Build website
         run: |
