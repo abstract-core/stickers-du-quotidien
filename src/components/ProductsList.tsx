@@ -63,7 +63,7 @@ export default function ProductsList({
           blocks,
         }) => {
           return (
-            <div className="product my-5">
+            <div className="product my-5" key={title}>
               <div className="product-thumbnail d-flex justify-content-center">
                 {imagePath && (
                   <img src={imagePath} alt={description} loading="lazy" />
