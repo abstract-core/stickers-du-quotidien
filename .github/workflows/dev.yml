@@ -58,7 +58,7 @@ jobs:
 
       - name: Build website
         run: |
-          npm i
+          npm i --force
           npx gatsby build
 
       - name: FTP dev environment
