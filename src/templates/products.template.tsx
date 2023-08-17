@@ -1,3 +1,4 @@
+import "../styles/global.scss";
 import React from "react";
 import {
   BlockObjectResponse,
